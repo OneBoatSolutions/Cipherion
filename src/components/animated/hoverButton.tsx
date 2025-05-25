@@ -12,7 +12,8 @@ type HoverBorderGradientProps<T extends React.ElementType> = {
   className?: string;
   duration?: number;
   clockwise?: boolean;
-} & React.ComponentPropsWithoutRef<T>;
+  children?: React.ReactNode;
+} & Omit<React.ComponentPropsWithoutRef<T>, "as" | "className" | "children">;
 
 export function HoverBorderGradient<T extends React.ElementType = "button">({
   children,
@@ -23,7 +24,8 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
   clockwise = true,
   ...props
 }: HoverBorderGradientProps<T>) {
-  const Tag = as || "button";
+  const Tag = (as || "button") as React.ElementType;
+
   const [hovered, setHovered] = useState(false);
   const [direction, setDirection] = useState<Direction>("TOP");
 
@@ -78,6 +80,7 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
       >
         {children}
       </div>
+
       <motion.div
         className="flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]"
         style={{
@@ -94,6 +97,7 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
         }}
         transition={{ ease: "linear", duration }}
       />
+
       <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
     </Tag>
   );
