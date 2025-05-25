@@ -1,7 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { motion } from "motion/react";
-import dynamic from "next/dynamic";
 import { globeConfig, sampleArcs, World } from "@/data/globeConfig";
 
 export default function Home() {

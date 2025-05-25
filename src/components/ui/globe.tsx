@@ -60,7 +60,7 @@ interface WorldProps {
   data: Position[];
 }
 
-let numbersOfRings = [0];
+
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
@@ -84,7 +84,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
-  // Initialize globe only once
   useEffect(() => {
     if (!globeRef.current && groupRef.current) {
       globeRef.current = new ThreeGlobe();
@@ -120,10 +119,10 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (!globeRef.current || !isInitialized || !data) return;
 
     const arcs = data;
-    let points = [];
+    const points = [];
+
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
-      const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
       points.push({
         size: defaultProps.pointSize,
         order: arc.order,
@@ -241,7 +240,7 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
-  }, []);
+  },[gl, size.height, size.width]);
 
   return null;
 }
@@ -283,12 +282,12 @@ export function World(props: WorldProps) {
 }
 
 export function hexToRgb(hex: string) {
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
         r: parseInt(result[1], 16),
