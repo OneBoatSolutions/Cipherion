@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -46,6 +46,8 @@ export function HoverBorderGradient({
 
   const highlight =
     "radial-gradient(75% 181.15942028985506% at 50% 50%, #3275F8 0%, rgba(255, 255, 255, 0) 100%)";
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!hovered) {
