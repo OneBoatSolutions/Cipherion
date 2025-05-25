@@ -1,42 +1,39 @@
 "use client";
-
 import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 
-type HoverBorderGradientProps<T extends React.ElementType> = {
-  as?: T;
-  containerClassName?: string;
-  className?: string;
-  duration?: number;
-  clockwise?: boolean;
-  children?: React.ReactNode;
-} & Omit<React.ComponentPropsWithoutRef<T>, "as" | "className" | "children">;
-
-export function HoverBorderGradient<T extends React.ElementType = "button">({
+export function HoverBorderGradient({
   children,
   containerClassName,
   className,
-  as,
+  as: Tag = "button",
   duration = 1,
   clockwise = true,
   ...props
-}: HoverBorderGradientProps<T>) {
-  const Tag = (as || "button") as React.ElementType;
-
+}: React.PropsWithChildren<
+  {
+    as?: React.ElementType;
+    containerClassName?: string;
+    className?: string;
+    duration?: number;
+    clockwise?: boolean;
+  } & React.HTMLAttributes<HTMLElement>
+>) {
   const [hovered, setHovered] = useState(false);
   const [direction, setDirection] = useState<Direction>("TOP");
 
   const rotateDirection = useCallback(
-    (currentDirection: Direction): Direction => {
+    (current: Direction): Direction => {
       const directions: Direction[] = ["TOP", "LEFT", "BOTTOM", "RIGHT"];
-      const currentIndex = directions.indexOf(currentDirection);
-      const nextIndex = clockwise
-        ? (currentIndex - 1 + directions.length) % directions.length
-        : (currentIndex + 1) % directions.length;
-      return directions[nextIndex];
+      const index = directions.indexOf(current);
+      return directions[
+        clockwise
+          ? (index - 1 + directions.length) % directions.length
+          : (index + 1) % directions.length
+      ];
     },
     [clockwise]
   );
@@ -80,7 +77,6 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
       >
         {children}
       </div>
-
       <motion.div
         className="flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]"
         style={{
@@ -97,7 +93,6 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
         }}
         transition={{ ease: "linear", duration }}
       />
-
       <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
     </Tag>
   );
