@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* @import "tailwindcss"; */
+
+/* @theme {
+  --animate-spin-slow: spin-slow 4s linear infinite;
+
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+} */
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+    }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+    }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+    }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+    }
+  }
+}
+
+/* ===========================================
+   Dark Theme (default)
+   Palette roles:
+   • #05031f – Deep night background (mystery, focus)
+   • #18062a – Card/section backgrounds (depth, layering)
+   • #43256e – Secondary surfaces & accents (calm creativity)
+   • #6d18ff – Primary interactive elements (energy, creativity)
+   • #7143fe – Hover / active accents (warmth, engagement)
+   • #9569fe – Muted accents & info states (gentle, supportive)
+   • #d9b6ff – Highlight / focus rings (dreamy clarity)
+   • #eodbfb – Subtle backgrounds & borders (soft separation)
+   • #ffffff – Main text & icons (contrast, readability)
+   =========================================== */
+:root {
+  /* Core */
+  --radius: 0.3rem;
+
+  /* Backgrounds */
+  --background: #02010f;
+  --surface:    #18062a;
+  --surface-alt:#43256e;
+
+  /* Text & Foreground */
+  --text-primary:   #ffffff;
+  --text-secondary: #eodbfb;
+  --text-disabled:  #9569fe;
+ 
+  /* Primary action */
+  --primary:             #6d18ff;
+  --primary-hover:       #7143fe;
+  --primary-foreground:  #ffffff;
+
+  /* Secondary & informational */
+  --secondary:            #43256e;
+  --secondary-foreground: #ffffff;
+  --info:                 #9569fe;
+  --info-foreground:      #05031f;
+
+  /* Accent / states */
+  --accent:        #d9b6ff;
+  --accent-hover:  #eodbfb;
+  --success:       #6d18ff; /* reuse primary—purple can indicate success in-brand */
+  --warning:       #9569fe; /* a gentler warning hue */
+  --destructive:   #d90466; /* optional – pink-red for destructive, mix purple+red */
+
+  /* Inputs & Borders */
+  --border:       #39224f;
+  --input-bg:     #18062a;
+  --input-border: #43256e;
+  --ring:         #d9b6ff;
+
+  /* Charts */
+  --chart-1: #6d18ff;
+  --chart-2: #7143fe;
+  --chart-3: #9569fe;
+  --chart-4: #d9b6ff;
+  --chart-5: #eodbfb;
+
+
+  --globe: #0b0622f3;
+  --ambient: #200041;
+  --l:#5e0695;
+}
+
+/* ===========================================
+   Light Theme Overrides
+   • Invert hierarchy: light backgrounds & dark text
+   =========================================== */
+.light {
+  /* Backgrounds */
+  --background: #ffffff;
+  --surface:    #eodbfb;
+  --surface-alt:#d9b6ff;
+
+  /* Text & Foreground */
+  --text-primary:   #05031f;
+  --text-secondary: #43256e;
+  --text-disabled:  #6d18ff;
+
+  /* Primary action */
+  --primary:             #6d18ff;
+  --primary-hover:       #7143fe;
+  --primary-foreground:  #ffffff;
+
+  /* Secondary & informational */
+  --secondary:           #9569fe;
+  --secondary-foreground:#ffffff;
+  --info:                #43256e;
+  --info-foreground:     #ffffff;
+
+  /* Accent / states */
+  --accent:        #7143fe;
+  --accent-hover:  #6d18ff;
+  --success:       #6d18ff;
+  --warning:       #9569fe;
+  --destructive:   #d90466;
+
+  /* Inputs & Borders */
+  --border:       #f0f0f0;
+  --input-bg:     #ffffff;
+  --input-border: #eodbfb;
+  --ring:         #6d18ff;
+
+  /* Charts */
+  --chart-1: #6d18ff;
+  --chart-2: #7143fe;
+  --chart-3: #9569fe;
+  --chart-4: #d9b6ff;
+  --chart-5: #43256e;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
