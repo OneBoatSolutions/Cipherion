@@ -54,11 +54,12 @@ const Header = () => {
               {/* Spinning border ring */}
 
               {/* Actual nav content */}
-              <nav className="relative z-10 hidden md:block  rounded-3xl backdrop-blur-[6px] shadow-[4_4px_16px_rgba(255,255,255,0.9)] ">
-                <HoverBorderGradient
+               <HoverBorderGradient
                   className="bg-[rgba(144,83,241,0.16)]  backdrop-blur-[6px]"
                   containerClassName="bg-[rgba(34,14,67,0.16)] backdrop-blur-[6px]"
                 >
+              <nav className="relative z-10 hidden md:block  ">
+               
                   <div className="flex items-center justify-around space-x-6 mr-2 ml-2">
                     {navItems.map((item) => (
                       <a
@@ -87,8 +88,8 @@ const Header = () => {
                       </a>
                     ))}
                   </div>
-                </HoverBorderGradient>
               </nav>
+                </HoverBorderGradient>
             </div>
 
             {/* CTA Button and Theme Toggle */}
