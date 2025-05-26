@@ -54,10 +54,10 @@ const Header = () => {
               {/* Spinning border ring */}
 
               {/* Actual nav content */}
-               <HoverBorderGradient
+               {/* <HoverBorderGradient
                   className="bg-[rgba(144,83,241,0.16)]  backdrop-blur-[6px]"
                   containerClassName="bg-[rgba(34,14,67,0.16)] backdrop-blur-[6px]"
-                >
+                > */}
               <nav className="relative z-10 hidden md:block  ">
                
                   <div className="flex items-center justify-around space-x-6 mr-2 ml-2">
@@ -89,7 +89,7 @@ const Header = () => {
                     ))}
                   </div>
               </nav>
-                </HoverBorderGradient>
+                {/* </HoverBorderGradient> */}
             </div>
 
             {/* CTA Button and Theme Toggle */}

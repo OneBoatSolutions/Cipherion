@@ -12,7 +12,7 @@ type HoverBorderGradientProps<T extends React.ElementType> = {
   className?: string;
   duration?: number;
   clockwise?: boolean;
-  children?: React.ReactNode;               // allow any children
+  children?: React.ReactNode;               
 } & Omit<React.ComponentPropsWithoutRef<T>, "as" | "children">;
 
 export function HoverBorderGradient<T extends React.ElementType = "button">({
