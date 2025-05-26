@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { ModeToggle } from "@/components/ToggleTheme";
 import { Button } from "./ui/button";
-import { HoverBorderGradient } from "./animated/hoverButton";
+import { GradientBorder } from "./animated/gradient-border";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,12 +54,20 @@ const Header = () => {
               {/* Spinning border ring */}
 
               {/* Actual nav content */}
-               {/* <HoverBorderGradient
+              {/* <HoverBorderGradient
                   className="bg-[rgba(144,83,241,0.16)]  backdrop-blur-[6px]"
                   containerClassName="bg-[rgba(34,14,67,0.16)] backdrop-blur-[6px]"
                 > */}
-              <nav className="relative z-10 hidden md:block  ">
-               
+              <GradientBorder
+                borderRadius="rounded-full"
+                duration={2}
+                clockwise={false}
+                gradientColors={{
+                  primary: "hsl(280, 100%, 70%)",
+                  highlight: "#8B5CF6",
+                }}
+              >
+                <nav className="relative z-10 hidden md:block px-5 py-3 rounded-full ">
                   <div className="flex items-center justify-around space-x-6 mr-2 ml-2">
                     {navItems.map((item) => (
                       <a
@@ -80,7 +88,7 @@ const Header = () => {
 
                         {/* Glowing Underline */}
                         <span
-                          className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-[color:var(--accent)] rounded-full 
+                          className="absolute left-1/2 bottom-0  w-0 h-[2px] bg-[color:var(--accent)] rounded-full 
             transform -translate-x-1/2 origin-center 
             group-hover:w-full group-hover:shadow-[1px_1px_8px_var(--accent),0_0_32px_var(--accent)] 
             transition-all duration-500 ease-out"
@@ -88,20 +96,28 @@ const Header = () => {
                       </a>
                     ))}
                   </div>
-              </nav>
-                {/* </HoverBorderGradient> */}
+                </nav>
+              </GradientBorder>
+              {/* </HoverBorderGradient> */}
             </div>
 
             {/* CTA Button and Theme Toggle */}
             <div className="hidden md:flex items-center space-x-4">
               <ModeToggle />
-              <HoverBorderGradient
-                containerClassName="rounded-full"
-                as="button"
-                className="dark:bg-background bg-white text-black dark:text-white flex items-center space-x-2"
+              <GradientBorder
+                borderRadius="rounded-full"
+                duration={2}
+                clockwise={false}
+                gradientColors={{
+                  primary: "hsl(280, 100%, 70%)",
+                  highlight: "#8B5CF6",
+                }}
+                className="bg-[var(--background)] "
               >
-                Get Started
-              </HoverBorderGradient>
+                <Button className="relative z-10  rounded-full text-accent-foreground outline-none border-0  bg-[var(--background)] hover:bg-transperent ">
+                  Gradient Button
+                </Button>
+              </GradientBorder>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -151,13 +167,20 @@ const Header = () => {
               </a>
             ))}
             <div className="flex flex-col items-center gap-3 mt-4">
-              <HoverBorderGradient
-                containerClassName="rounded-full w-full"
-                as="button"
-                className=" flex w-full justify-center dark:bg-background bg-white text-black dark:text-white  items-center space-x-2"
+              <GradientBorder
+                borderRadius="rounded-full"
+                duration={2}
+                clockwise={false}
+                gradientColors={{
+                  primary: "hsl(280, 100%, 70%)",
+                  highlight: "#8B5CF6",
+                }}
+                className="bg-[var(--background)] "
               >
-                Get Started
-              </HoverBorderGradient>
+                <Button className="relative z-10  rounded-full text-accent-foreground outline-none border-0  bg-[var(--background)] hover:bg-transperent ">
+                  Gradient Button
+                </Button>
+              </GradientBorder>
             </div>
           </div>
         </div>
