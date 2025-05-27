@@ -34,7 +34,7 @@ const Header = () => {
       {/* Main header content */}
       <div className=" relative">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-around h-16">
+          <div className="flex items-center justify-between h-16 md:px-2">
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-2">
