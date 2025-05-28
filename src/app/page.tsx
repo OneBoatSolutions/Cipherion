@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button"
 import { globeConfig, sampleArcs, World } from "@/data/globeConfig"
 import { LampBreak, LampContainer } from "@/components/ui/lamp"
 import Features from "@/components/features"
+import Faqs from "@/components/faqs"
+import { CtA } from "@/components/cta"
 
 export default function Home() {
   return (
@@ -17,10 +19,10 @@ export default function Home() {
         <div className="text-center max-w-4xl mx-auto mb-16 mt-16 md:mt-0 px-4 z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             <span
-              className="bg-gradient-to-r from-[#9f00ff] via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold"
+              className="bg-gradient-to-r from-[#6d18ff] via-[#9569fe] to-[#d9b6ff] bg-clip-text  text-transparent font-bold"
               style={{
                 textShadow:
-                  "1px 0 1px #9f00ff, 0 1px 2px #bf40ff, 1px 0 2px #e0b3ff, 1px 0 1px #ffffff",
+                  "1px 1px 1px #9f00ff, ",
               }}
             >
               Quantum-Resilient
@@ -81,12 +83,13 @@ export default function Home() {
       
     </LampContainer>
       </section>
-      
 
-      {/* About / Who We Are Section */}
       <section className="">
         <Features/>
+        <CtA/>
       </section>
+      <Faqs/>
+
     </>
   )
 }

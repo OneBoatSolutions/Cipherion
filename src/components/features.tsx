@@ -218,7 +218,7 @@ export default function Features() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"])
 
   return (
-    <div className="min-h-screen bg-[#02010f] relative overflow-hidden">
+    <div className="min-h-screen bg-transparent  relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div style={{ y: backgroundY }} className="absolute inset-0">
