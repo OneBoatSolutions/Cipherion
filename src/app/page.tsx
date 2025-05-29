@@ -3,7 +3,7 @@ import { globeConfig, sampleArcs, World } from "@/data/globeConfig"
 import { LampBreak, LampContainer } from "@/components/ui/lamp"
 import Features from "@/components/features"
 import Faqs from "@/components/faqs"
-import { CtA } from "@/components/cta"
+import { CtA1 } from "@/components/cta"
 
 export default function Home() {
   return (
@@ -86,7 +86,7 @@ export default function Home() {
 
       <section className="">
         <Features/>
-        <CtA/>
+        <CtA1/>
       </section>
       <Faqs/>
 

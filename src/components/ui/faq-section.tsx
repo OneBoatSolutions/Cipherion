@@ -55,10 +55,9 @@ const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
             )}
           </motion.div>
 
-          {/* FAQ Items - Two columns */}
           <div className="flex flex-col w-full md:flex-row md:flex-wrap md:justify-between gap-4 max-w-5xl mx-auto px-2">
             {items.map((item, index) => (
-              <div key={index} className="relative group w-full border-[#43256e]/30  border bg-[#18062a]/20 backdrop-blur-sm hover:border-[#9569fe]/50 transition-all duration-500 p-1 rounded-2xl">
+              <div key={index} className="relative  w-full border-[#43256e]/30  border bg-[#18062a]/20 backdrop-blur-sm hover:border-[#9569fe]/50 transition-all duration-500 p-1 rounded-2xl">
                 <GlowingEffect
                   spread={40}
                   glow={true}
@@ -137,17 +136,16 @@ const FaqItem = React.forwardRef<
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: index * 0.1 }}
       className={cn(
-        "rounded-2xl  overflow-hidden transition-all duration-200 ease-in-out  bg-gradient-to-br from-[#18062a]/60 to-[#02010f]/80 backdrop-blur-xl border border-[#43256e]/20",
+        "rounded-2xl overflow-hidden transition-all duration-200 ease-in-out bg-gradient-to-br from-[#18062a]/60 to-[#02010f]/80 backdrop-blur-xl border border-[#43256e]/20",
         isOpen ? "bg-gradient-to-br from-[#18062a]/60 to-[#02010f]/80 backdrop-blur-xl border border-[#43256e]/20" : "bg-gradient-to-br from-[#18062a]/60 to-[#02010f]/80 backdrop-blur-xl border border-[#43256e]/20"
       )}
     >
-      <Button
-        variant="ghost"
+      <div
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 h-auto justify-between"
+        className="w-full flex flex-nowrap py-4 h-auto px-2 justify-between items-center hover:text-accent-foreground "
       >
         <h3
-          className={cn("text-base font-medium text-left")}
+          className={cn(" w-full h-auto  px-4 font-medium text-left flex flex-wrap")}
           style={{ color: isOpen ? "var(--text-primary)" : "var(--text-secondary)" }}
         >
           {question}
@@ -163,7 +161,7 @@ const FaqItem = React.forwardRef<
         >
           <ChevronDown className="h-4 w-4" />
         </motion.div>
-      </Button>
+      </div>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div

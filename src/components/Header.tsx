@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { ModeToggle } from "@/components/ToggleTheme";
 import { Button } from "./ui/button";
 import { GradientBorder } from "./animated/gradient-border";
+import Image from "next/image";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,9 +20,9 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "#" },
     { name: "About Us", href: "#" },
-    {name: "Resources", href: "/resources"},
+    { name: "Resources", href: "/resources" },
     { name: "Pricing", href: "#" },
-    {name: "Solution", href: "#"},
+    { name: "Solution", href: "#" },
     { name: "Contact", href: "#" },
   ];
 
@@ -40,14 +41,13 @@ const Header = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[color:var(--primary)] to-[color:var(--accent)] flex items-center justify-center">
-                  <span className="text-[color:var(--primary-foreground)] font-bold text-sm">
-                    L
-                  </span>
-                </div>
-                <span className="text-[color:var(--text-primary)] font-semibold text-xl">
-                  Logo
-                </span>
+                <Image
+                  src="/bitmap.png" // path from /public
+                  alt="Description of the image"
+                  width={200}
+                  height={200}
+                  className="rounded-lg drop-shadow-[0_5px_15px_rgba(149,105,254,0.5)]"
+                />
               </div>
             </div>
 
