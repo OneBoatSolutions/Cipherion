@@ -142,8 +142,21 @@
   --globe: #0b0622f3;
   --ambient: #200041;
   --l:#5e0695;
-}
+  --s: #6d18ff; 
+  --r : #7143fe;
+  --q :#7143fe;
+  --i:  #9569fe;
+  --o: #48197b,;
+  --p: #43256e;
 
+}
+ /* {
+   
+    , 
+   
+    
+    
+ } */
 /* ===========================================
    Light Theme Overrides
    • Invert hierarchy: light backgrounds & dark text
@@ -224,3 +237,4 @@
     @apply bg-background text-foreground;
   }
 }
+

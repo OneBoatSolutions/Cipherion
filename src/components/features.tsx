@@ -2,14 +2,42 @@
 
 import type React from "react"
 import { useRef } from "react"
-import { motion, useScroll, useTransform, useInView } from "framer-motion"
-import { Atom, Shield, EyeOff, KeyRound, ScrollText, Users, Globe, Zap, Code, Lock, Sparkles } from "lucide-react"
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useInView,
+} from "framer-motion"
+import {
+  Atom,
+  Shield,
+  EyeOff,
+  KeyRound,
+  ScrollText,
+  Globe,
+  Zap,
+  Code,
+  Lock,
+  Sparkles,
+  BarChart3,
+  Trash2,
+  Cloud,
+} from "lucide-react"
 import { GlowingEffect } from "@/components/animated/glowing-card"
 
+/**
+ * Updated feature list (June 20 2025)
+ * – Removed “Role‑Based Access Control (RBAC)”
+ * – Added four new capabilities:
+ *   7  Inline Data Protection Without Code Refactor
+ *   9  Format‑Consistent Analytics Compatibility
+ *   10 Instant Anonymization & Data Lifecycle Controls
+ *   11 On‑Prem & Cloud‑Agnostic Deployment
+ */
 const features = [
   {
     id: 1,
-    title: "Quantum-Resilient Encryption",
+    title: "Quantum‑Resilient Encryption",
     description:
       "Uses advanced cryptographic models designed to resist quantum attacks. Secure against Shor's and Grover's algorithms.",
     icon: <Atom className="h-5 w-5 text-[#d9b6ff]" />,
@@ -17,7 +45,7 @@ const features = [
   },
   {
     id: 2,
-    title: "Field-Level Encryption",
+    title: "Field‑Level Encryption",
     description:
       "Encrypt individual data fields like names, emails, card numbers, EMRs, etc. Enables selective access and minimizes blast radius in case of breach.",
     icon: <Shield className="h-5 w-5 text-[#d9b6ff]" />,
@@ -27,7 +55,7 @@ const features = [
     id: 3,
     title: "Dynamic Tokenization & PII Masking",
     description:
-      "Replace sensitive fields with non-reversible tokens or masked values. Ensures compliance with GDPR, HIPAA, and PCI-DSS.",
+      "Replace sensitive fields with non‑reversible tokens or masked values. Ensures compliance with GDPR, HIPAA, and PCI‑DSS.",
     icon: <EyeOff className="h-5 w-5 text-[#d9b6ff]" />,
     area: "md:[grid-area:2/1/3/7] xl:[grid-area:1/9/2/13]",
   },
@@ -43,35 +71,59 @@ const features = [
     id: 5,
     title: "REST & gRPC APIs for Developers",
     description:
-      "Lightweight, plug-and-play API integrations. Built with OpenAPI standards and supports token-based authentication.",
+      "Lightweight, plug‑and‑play API integrations. Built with OpenAPI standards and supports token‑based authentication.",
     icon: <Code className="h-5 w-5 text-[#d9b6ff]" />,
     area: "md:[grid-area:3/1/4/7] xl:[grid-area:2/5/3/9]",
   },
   {
     id: 6,
-    title: "Real-Time Audit Logging",
+    title: "Real‑Time Audit Logging",
     description:
-      "Track every access, mutation, and request involving sensitive data. Generate reports for internal review or third-party audits.",
+      "Track every access, mutation, and request involving sensitive data. Generate reports for internal review or third‑party audits.",
     icon: <ScrollText className="h-5 w-5 text-[#d9b6ff]" />,
     area: "md:[grid-area:3/7/4/13] xl:[grid-area:2/9/3/13]",
   },
   {
     id: 7,
-    title: "Role-Based Access Control (RBAC)",
+    title: "Inline Data Protection Without Code Refactor",
     description:
-      "Fine-grained controls for teams, partners, and systems. Enforce least-privilege access down to the field level.",
-    icon: <Users className="h-5 w-5 text-[#d9b6ff]" />,
+      "Encrypt, tokenize, or mask sensitive fields directly inside existing forms, APIs, and database flows — no need to redesign your application logic.",
+    icon: <Lock className="h-5 w-5 text-[#d9b6ff]" />,
     area: "md:[grid-area:4/1/5/7] xl:[grid-area:3/1/4/7]",
   },
   {
     id: 8,
-    title: "Cross-Border Compliance Mode",
+    title: "Cross‑Border Compliance Mode",
     description:
-      "Adapts to country-specific regulations dynamically (e.g., GDPR vs. HIPAA). Localized masking/encryption logic for multi-region deployment.",
+      "Adapts to country‑specific regulations dynamically (e.g., GDPR vs. HIPAA). Localized masking/encryption logic for multi‑region deployment.",
     icon: <Globe className="h-5 w-5 text-[#d9b6ff]" />,
     area: "md:[grid-area:4/7/5/13] xl:[grid-area:3/7/4/13]",
   },
-]
+  {
+    id: 9,
+    title: "Format‑Consistent Analytics Compatibility",
+    description:
+      "Tokenized or masked data retains structure and data types, enabling continued use in dashboards, BI tools, and machine‑learning workflows without data leakage.",
+    icon: <BarChart3 className="h-5 w-5 text-[#d9b6ff]" />,
+    area: "md:[grid-area:5/1/6/7] xl:[grid-area:4/1/5/5]",
+  },
+  {
+    id: 10,
+    title: "Instant Anonymization & Data Lifecycle Controls",
+    description:
+      "One‑click anonymize, revoke, or delete PII/PHI/PCI records to support user rights under data privacy laws (Right to be Forgotten, Right to Access).",
+    icon: <Trash2 className="h-5 w-5 text-[#d9b6ff]" />,
+    area: "md:[grid-area:5/7/6/13] xl:[grid-area:4/5/5/9]",
+  },
+  {
+    id: 11,
+    title: "On‑Prem & Cloud‑Agnostic Deployment",
+    description:
+      "Deploy Cipherion wherever your systems are — cloud‑native, hybrid, or fully on‑prem — with no vendor lock‑in.",
+    icon: <Cloud className="h-5 w-5 text-[#d9b6ff]" />,
+    area: "md:[grid-area:6/1/7/13] xl:[grid-area:4/9/5/13]",
+  },
+] as const
 
 interface GridItemProps {
   area: string
@@ -110,7 +162,7 @@ const GridItem = ({ area, icon, title, description, index }: GridItemProps) => {
           borderWidth={1}
         />
 
-        {/* Glass morphic inner container */}
+        {/* Glass‑morphic inner container */}
         <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 bg-gradient-to-br from-[#18062a]/60 to-[#02010f]/80 backdrop-blur-xl border border-[#43256e]/20">
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-[0.03]">
@@ -241,22 +293,7 @@ export default function Features() {
         </motion.div>
       </div>
 
-      {/* Floating orbs */}
-      {/* <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-32 left-20">
-          <FloatingOrb delay={0} size="w-3 h-3" color="#6d18ff" />
-        </div>
-        <div className="absolute top-64 right-32">
-          <FloatingOrb delay={2} size="w-2 h-2" color="#d9b6ff" />
-        </div>
-        <div className="absolute bottom-40 left-1/4">
-          <FloatingOrb delay={4} size="w-4 h-4" color="#9569fe" />
-        </div>
-        <div className="absolute bottom-60 right-1/3">
-          <FloatingOrb delay={1} size="w-3 h-3" color="#7143fe" />
-        </div>
-      </div> */}
-
+      {/* Features Section */}
       <section ref={containerRef} className="relative py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -313,7 +350,7 @@ export default function Features() {
           </motion.div>
 
           {/* Features Grid */}
-          <ul className="grid grid-cols-1 grid-rows-none gap-6 md:grid-cols-12 md:grid-rows-4 lg:gap-6 xl:grid-rows-3">
+          <ul className="grid grid-cols-1 grid-rows-none gap-6 md:grid-cols-12 md:grid-rows-6 lg:gap-6 xl:grid-rows-4">
             {features.map((feature, index) => (
               <GridItem
                 key={feature.id}

@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-transparent px-6 py-10 mt-16">
   
       <div className="h-40 flex items-center justify-center">
-        <TextHoverEffect text="Cipherion" />
+        <TextHoverEffect text="Cipherion"  />
       </div>
 
       <div className="max-w-7xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">

@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       {/* Home Screen Section */}
-      <main className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center">
+      <main className="relative min-h-screen  flex flex-col items-center justify-center">
         {/* Globe background */}
-        <div className="absolute inset-0 opacity-70 -z-10 w-full">
+        <div className="absolute inset-0 opacity-70 w-full">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
 

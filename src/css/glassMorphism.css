@@ -1,0 +1,13 @@
+.dropdown-backdrop-overlay {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+.glass-panel {
+  background: rgba(24, 6, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(67, 37, 110, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
