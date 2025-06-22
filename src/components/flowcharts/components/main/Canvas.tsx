@@ -125,11 +125,14 @@ export const ReactFlowCanvas: React.FC = () => {
   /** Center + zoom‑out once on init */
   const onInit = (rf: ReactFlowInstance) => {
     rf.fitView({ padding: 0.2 });
-    rf.setViewport({ x: 380, y: 100, zoom: 0.6 }); // 60 % zoom‑out
+    const isMobile = window.innerWidth < 768; 
+    const zoom = isMobile ? 0.22 : 0.6;  
+    const x = isMobile? 65 : 380
+    rf.setViewport({ x, y: 100, zoom }); // 60 % zoom‑out
   };
 
   return (
-    <div className="w-full h-screen bg-background">
+    <div className="w-full h-[70vh] md:h-screen bg-background">
       <ReactFlow
         nodes={nodes}
         edges={edges}
