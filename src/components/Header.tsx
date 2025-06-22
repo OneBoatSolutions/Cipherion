@@ -6,6 +6,7 @@ import { GradientBorder } from "./animated/gradient-border";
 import { GlowingEffect } from "./animated/glowing-card";
 import "../css/glassMorphism.css";
 import { Separator } from "./ui/separator";
+import { ModeToggle } from "./ToggleTheme";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -263,6 +264,7 @@ const Header = () => {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
+          
               <GradientBorder
                 borderRadius="rounded-full"
                 duration={2}

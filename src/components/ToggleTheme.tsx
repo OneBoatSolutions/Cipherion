@@ -28,7 +28,7 @@ export function ModeToggle() {
   align="end"
   className="group relative overflow-hidden backdrop-blur-[12px] backdrop-saturate-[145%] bg-gradient-to-br from-[var(--surface)] to-[var(--background)] rounded-xl border"
 >
-        <DropdownMenuItem className="focus:bg-primary hover:bg-accent-hover focus:text-text-secondary" onClick={() => setTheme("light")}>
+        <DropdownMenuItem className="focus:bg-primary hover:bg-accent-hover focus:text-text-secondary" onClick={() => setTheme("dark")}>
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
