@@ -7,6 +7,7 @@ import { GlowingEffect } from "./animated/glowing-card";
 import "../css/glassMorphism.css";
 import { Separator } from "./ui/separator";
 import { ModeToggle } from "./ToggleTheme";
+import Image from "next/image";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,9 +24,9 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
+    { name: "Solution", href: "/solution", hasDropdown: true },
     { name: "Resources", href: "/resources" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Solution", href: "/solution", hasDropdown: true },
     // { name: "Contact", href: "/" },
   ];
 
@@ -57,14 +58,8 @@ const Header = () => {
       title: "BY DATA TYPE",
       items: [
         {
-          name: "Card data",
-          href: "/solution/card-data",
-          icon: "💳",
-          description: "PCI DSS compliant payment processing",
-        },
-        {
           name: "Banking data",
-          href: "/solution/banking-data",
+          href: "/solution/pci",
           icon: "🏦",
           description: "Financial data protection & compliance",
         },
@@ -76,13 +71,13 @@ const Header = () => {
         },
         {
           name: "HIPAA & ePHI",
-          href: "/solution/hipaa-ephi",
+          href: "/solution/phi",
           icon: "🏥",
           description: "Healthcare data protection standards",
         },
         {
           name: "Gen AI Privacy",
-          href: "/solution/genai",
+          href: "/solution/gen-ai",
           icon: "🔐",
           description: "Securing sensitive Data from LLM's",
         },
@@ -108,7 +103,7 @@ const Header = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-2">
-                <img
+                <Image
                   src="/bitmap.png" // path from /public
                   alt="Description of the image"
                   width={200}

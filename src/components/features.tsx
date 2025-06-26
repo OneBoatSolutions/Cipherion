@@ -24,16 +24,8 @@ import {
   Cloud,
 } from "lucide-react"
 import { GlowingEffect } from "@/components/animated/glowing-card"
+import { AuroraText } from "./animated/aurora-text"
 
-/**
- * Updated feature list (June 20 2025)
- * – Removed “Role‑Based Access Control (RBAC)”
- * – Added four new capabilities:
- *   7  Inline Data Protection Without Code Refactor
- *   9  Format‑Consistent Analytics Compatibility
- *   10 Instant Anonymization & Data Lifecycle Controls
- *   11 On‑Prem & Cloud‑Agnostic Deployment
- */
 const features = [
   {
     id: 1,
@@ -321,9 +313,11 @@ export default function Features() {
             >
               Key Features of{" "}
               <span className="relative">
-                <span className="bg-gradient-to-r from-[#6d18ff] via-[#9569fe] to-[#d9b6ff] bg-clip-text text-transparent">
-                  Cipherion
-                </span>
+                <AuroraText>Cipherion</AuroraText>
+              
+
+
+
                 <motion.div
                   className="absolute -inset-2 bg-gradient-to-r from-[#6d18ff]/20 to-[#d9b6ff]/20 blur-xl rounded-lg"
                   animate={{

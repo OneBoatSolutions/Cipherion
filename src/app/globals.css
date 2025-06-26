@@ -1,6 +1,47 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+/* 4. Tailwind’s utilities layer */
+@import "tailwindcss/utilities";
+
+/* 5. Custom utilities under @layer utilities */
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  .animation-delay-900 {
+    animation-delay: 900ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+  .animation-delay-1500 {
+    animation-delay: 1500ms;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /* @import "tailwindcss"; */
@@ -78,6 +119,25 @@
     transform: translateZ(0) rotate(360deg);
     }
   }
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+ 
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 /* ===========================================
@@ -141,13 +201,7 @@
 
   --globe: #0b0622f3;
   --ambient: #200041;
-  --l:#5e0695;
-  --s: #6d18ff; 
-  --r : #7143fe;
-  --q :#7143fe;
-  --i:  #9569fe;
-  --o: #48197b,;
-  --p: #43256e;
+ 
 
 }
  /* {

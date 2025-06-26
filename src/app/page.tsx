@@ -4,6 +4,7 @@ import { LampBreak, LampContainer } from "@/components/ui/lamp"
 import Features from "@/components/features"
 import Faqs from "@/components/faqs"
 import { CtA1 } from "@/components/cta"
+import { AuroraText } from "@/components/animated/aurora-text"
 
 export default function Home() {
   return (
@@ -18,16 +19,7 @@ export default function Home() {
         {/* Hero Content */}
         <div className="text-center max-w-4xl mx-auto mb-16 mt-16 md:mt-0 px-4 z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            <span
-              className="bg-gradient-to-r from-[#6d18ff] via-[#9569fe] to-[#d9b6ff] bg-clip-text  text-transparent font-bold"
-              style={{
-                textShadow:
-                  "1px 1px 1px #9f00ff, ",
-              }}
-            >
-              Quantum-Resilient
-            </span>{" "}
-            Encryption.
+           <AuroraText>Quantum Resilient</AuroraText>
             <span className="block">Zero Trust. Zero Compromise.</span>
           </h1>
 

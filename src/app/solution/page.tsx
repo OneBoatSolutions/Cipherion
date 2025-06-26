@@ -10,6 +10,8 @@ import {
 } from "framer-motion"
 import { Zap } from 'lucide-react'
 import { AuroraText } from '@/components/animated/aurora-text'
+import { BentoDemo } from './_components/SolutionGrid'
+
 function page() {
     const containerRef = useRef(null)
       const { scrollYProgress } = useScroll({
@@ -98,6 +100,7 @@ function page() {
             </div>
        
         <ReactFlowCanvas/>
+        <BentoDemo/>
        <CtA1/>
     </div>
   )
