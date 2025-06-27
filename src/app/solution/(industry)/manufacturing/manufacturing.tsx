@@ -362,12 +362,9 @@ export default function ManufacturingSolutions() {
                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                                 </Button>
                             </GradientBorder>
-                             <GradientBorder>
-                                <Button variant="outline" className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
-                                    <span className="relative z-10">Talk to a Plant Security Specialist</span>
-                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                                </Button>
-                            </GradientBorder>
+                             
+                             
+
                         </motion.div>
                     </motion.div>
 
@@ -582,12 +579,9 @@ export default function ManufacturingSolutions() {
                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                                 </Button>
                             </GradientBorder>
-                             <GradientBorder>
-                                <Button variant="outline" className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
-                                    <span className="relative z-10">Connect with Cipherion Deployment Engineer</span>
-                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                                </Button>
-                            </GradientBorder>
+
+                             
+
                         </div>
                     </motion.div>
                 </div>
