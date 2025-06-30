@@ -10,7 +10,8 @@ import Credit from "./credit-card";
 import PIITextCardDemo from "./piiMask";
 import { PhiCards } from "./phi_cards";
 import { PIITextReveal } from "./pii-compare";
-
+import { GlowingEffect } from "@/components/animated/glowing-card";
+import React from "react";
 
 const files = [
   {
@@ -61,7 +62,7 @@ const features = [
     Icon: FileTextIcon,
     name: "Helathcare",
     description: "We automatically save your files as you type.",
-    href: "#",
+    href: "healthcare",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -96,7 +97,7 @@ const features = [
     Icon: BellIcon,
     name: "Fintech",
     description: "Get notified when something happens.",
-    href: "#",
+    href: "/fintech",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
@@ -106,8 +107,8 @@ const features = [
   {
     Icon: Share2Icon,
     name: "Manufacturing",
-    description: "Supports 100+ integrations and counting.",
-    href: "#",
+    description: "Secure the IoT, and the sensitive information of machines",
+    href: "/manufacturing",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
@@ -117,9 +118,9 @@ const features = [
   {
     Icon: CalendarIcon,
     name: "PCI-DSS",
-    description: "Use the calendar to filter your files by date.",
+    description: "Secure your card details.",
     className: "col-span-3 lg:col-span-1",
-    href: "#",
+    href: "/pci",
     cta: "Learn more",
     background: (
       <Credit/>
@@ -129,7 +130,7 @@ const features = [
     Icon: Brain,
     name: "Gen AI Privacy",
     description: "Mask the sensitive data before sending it to LLM's",
-    className: "col-span-1 lg:col-span-1",
+    className: "col-span-3 lg:col-span-1",
     href: "/gen-ai",
     cta: "Learn More",
     background: (
@@ -140,7 +141,7 @@ const features = [
     Icon: HeartPlus,
     name: "PHI",
     description: "Get complied by PHI, HIPPA",
-    className: "col-span-2 lg:col-span-1",
+    className: "col-span-3 lg:col-span-1",
     href: "/phi",
     cta:"Learn More",
     background: (
@@ -151,7 +152,7 @@ const features = [
     Icon: User,
     name: "PII",
     description: "Encrypt the PII data",
-    className: "col-span-2 lg:col-span-1",
+    className: "col-span-3 lg:col-span-1",
     href: "/pii",
     cta: "Learn More",
     background: (
@@ -162,10 +163,15 @@ const features = [
 
 export function BentoDemo() {
   return (
-    <BentoGrid>
+<React.Fragment>
+    <BentoGrid className="p-4 lg:p-8">
       {features.map((feature, idx) => (
+        
         <BentoCard key={idx} {...feature} />
+        
       ))}
     </BentoGrid>
+
+      </React.Fragment>
   );
 }
