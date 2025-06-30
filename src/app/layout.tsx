@@ -4,7 +4,7 @@ import { AppProvider } from "@/providers/AppProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/footer";
 import Head from "next/head";
-
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Cipherion",
@@ -27,13 +27,14 @@ export default function RootLayout({
       <body>
         <AppProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <Header/>
           {children}
           <Footer/>
+          <Analytics />
         </AppProvider>
       </body>
     </html>

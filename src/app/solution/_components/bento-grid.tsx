@@ -3,6 +3,7 @@ import { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { GlowingEffect } from "@/components/animated/glowing-card";
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode;
@@ -53,8 +54,12 @@ const BentoCard = ({
     )}
     {...props}
   >
-    <div>{background}</div>
+    
+    <div>
+      {background}</div>
+     
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-2 p-6 transition-transform duration-300 group-hover:-translate-y-10">
+     
       <Icon className="h-12 w-12 text-neutral-700 dark:text-neutral-300 transition-transform duration-300 ease-in-out group-hover:scale-75" />
       <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
         {name}
