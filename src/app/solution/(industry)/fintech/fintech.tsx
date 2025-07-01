@@ -370,25 +370,6 @@ export default function FintechSolutions() {
               transition={{ duration: 1, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
             >
-              <GradientBorder>
-                <Button className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
-                  <span className="relative z-10">
-                    Request Fintech Security Demo
-                  </span>
-                  <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                </Button>
-              </GradientBorder>
-              <GradientBorder>
-                <Button
-                  variant="outline"
-                  className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group"
-                >
-                  <span className="relative z-10">
-                    Talk to a Compliance Advisor
-                  </span>
-                  <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                </Button>
-              </GradientBorder>
             </motion.div>
           </motion.div>
 
@@ -594,30 +575,6 @@ export default function FintechSolutions() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              Ready to Fortify Your Fintech Stack?
-            </h3>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <GradientBorder>
-                <Button className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
-                  <span className="relative z-10">
-                    Download Fintech Compliance Datasheet
-                  </span>
-                  <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                </Button>
-              </GradientBorder>
-              <GradientBorder>
-                <Button
-                  variant="outline"
-                  className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group"
-                >
-                  <span className="relative z-10">
-                    Run a Free Security & Privacy Risk Scan
-                  </span>
-                  <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                </Button>
-              </GradientBorder>
-            </div>
           </motion.div>
         </div>
         <div className="flex w-full justify-center mt-20">

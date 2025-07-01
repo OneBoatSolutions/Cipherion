@@ -40,7 +40,7 @@ const Page = () => {
             transition={{ duration: 1 }}
             className="text-center lg:text-left"
           >
-            <AuroraText className="text-4xl md:text-6xl font-extrabold">
+            <AuroraText className="font-poppins text-4xl md:text-6xl font-extrabold">
               About Cipherion
             </AuroraText>
 
