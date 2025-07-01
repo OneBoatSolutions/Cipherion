@@ -113,7 +113,7 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
     };
 
     
-    const rotateDeg = (widthPercentage - 50) * 0.1;
+    const rotateDeg = (widthPercentage - 60) * 0.1;
 
     return (
       <div
@@ -125,14 +125,14 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
         onTouchEnd={mouseLeaveHandler}
         onTouchMove={touchMoveHandler}
         className={cn(
-          "bg-background border border-white/[0.08] rounded-2xl p-6 relative overflow-hidden min-h-[300px]",
+          "bg-transparent rounded-2xl p-4 relative overflow-hidden min-h-[300px]",
           className
         )}
         {...props}
       >
        
         {/* JSON Content Area */}
-        <div className="relative pt-8 h-full flex items-center overflow-hidden">
+        <div className="relative w-full h-full bg-transparent flex items-center overflow-hidden">
           {/* Reveal layer (encrypted data) */}
           <motion.div
             style={{ width: "100%" }}
@@ -147,11 +147,11 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
                   }
             }
             transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-            className="absolute bg-background z-20 will-change-transform"
+            className="absolute bg-transparent z-20 will-change-transform"
           >
             <pre
               style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}
-              className="text-sm font-mono text-red-400 whitespace-pre-wrap leading-relaxed [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]"
+              className="text-sm p-8 font-mono text-red-400 whitespace-pre-wrap leading-relaxed [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]"
             >
               {`{\n  ${encryptedJson}\n}`}
             </pre>
@@ -164,8 +164,8 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
               rotate: `${rotateDeg}deg`,
               opacity: widthPercentage > 0 ? 1 : 0,
             }}
-            transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-            className="h-full w-[2px] bg-gradient-to-b from-transparent via-white/50 to-transparent absolute z-50 will-change-transform"
+            transition={isMouseOver ? { duration: 0 } : { duration: 0.3 }}
+            className="h-full w-[2px]  bg-gradient-to-b from-transparent via-white/50 to-transparent absolute z-50 will-change-transform"
           >
             {/* Gradient effects */}
             <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-indigo-400 via-transparent to-transparent z-20 opacity-50" />
@@ -175,9 +175,9 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
             <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
               <MemoizedSparklesCore
                 background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={1200}
+                minSize={0.6}
+                maxSize={1.5}
+                particleDensity={1400}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
@@ -185,8 +185,8 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
           </motion.div>
 
           {/* Base layer (PII data) */}
-          <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] h-full flex items-center">
-            <pre className="text-sm font-mono text-gray-500 whitespace-pre-wrap leading-relaxed">
+          <div className="overflow-hidden w-full [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] h-full flex items-center">
+            <pre className="text-sm font-mono p-8 text-gray-500 whitespace-pre-wrap leading-relaxed">
               {`{\n  ${plainJson}\n}`}
             </pre>
           </div>
@@ -200,9 +200,9 @@ PIITextCard.displayName = "PIITextCard";
 
 function PIITextReveal() {
   return (
-    <div className="absolute right-0 top-6 origin-top scale-90 rounded-2xl  transition-all duration-300 ease-out  group-hover:scale-90  hover:top-3">
+    <div className="absolute right-0 -top-10 origin-top scale-90 rounded-2xl  transition-all duration-300 ease-out  group-hover:scale-90  ">
       <div className="mb-4">
-        <p className="text-gray-400 text-md">
+        <p className="text-gray-400 text-md relative -top-4">
           Safegaurd all the PII information accross the complaince landscape
         </p>
       </div>
