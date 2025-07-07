@@ -4,6 +4,7 @@ import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { GlowingEffect } from "./glowing-card" 
 import { Sparkles } from "lucide-react"
+import { AuroraText } from "@/components/animated/aurora-text"; 
 
 interface TimelineEntry {
   title: string
@@ -32,13 +33,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full bg-[#02010f] font-sans md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-[#ffffff] max-w-4xl font-semibold">The Cipherion Story</h2>
-        <p className="text-[#e0dbfb]/80 text-sm md:text-base max-w-sm">
-          From a college mini project to enterprise-grade quantum-resilient encryption. Here's our journey of redefining
-          data security.
+
+
+      {/*Modified*/}
+      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 text-center">
+        <AuroraText className="text-3xl md:text-4xl font-bold mb-6">The Cipherion Story</AuroraText>
+        <p className="text-[#e0dbfb]/80 text-sm md:text-base max-w-4xl mx-auto text-justify">
+          From a college mini project to enterprise-grade quantum-resilient encryption. Here's our journey of redefining data security.
         </p>
       </div>
+
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (

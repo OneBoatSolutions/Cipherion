@@ -292,3 +292,8 @@
   }
 }
 
+/* Smooth scroll on About Us page */
+html {
+  scroll-behavior: smooth;
+}
+

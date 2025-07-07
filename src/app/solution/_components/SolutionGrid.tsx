@@ -15,31 +15,31 @@ import React from "react";
 
 const files = [
   {
-    name: "patient_medical_record.pdf",
+    name: "patient_record.pdf",
     body: "Comprehensive patient record with history, diagnoses, medications. Contains PHI; handle per HIPAA.",
   },
   {
-    name: "lab_report_complete_blood_count.pdf",
+    name: "blood_count.pdf",
     body: "CBC lab report showing hemoglobin, WBC, platelets. Contains PHI; secure handling required.",
   },
   {
-    name: "lab_report_metabolic_panel.pdf",
+    name: "lab_report.pdf",
     body: "Basic metabolic panel results (electrolytes, kidney function). Treat as PHI if real data.",
   },
   {
-    name: "radiology_image_chest_xray.dcm",
+    name: "chest_xray.dcm",
     body: "Chest X-ray image in DICOM format. Contains embedded patient metadata; encrypt and access-log.",
   },
   {
-    name: "mri_brain_scan.dcm",
+    name: "mri_scan.dcm",
     body: "MRI brain scan (DICOM). Large file with PHI in metadata; store/transmit securely.",
   },
   {
-    name: "ultrasound_abdomen.jpg",
+    name: "abdomen.jpg",
     body: "Ultrasound image exported as JPEG. May still contain identifiers in filename or metadata; handle carefully.",
   },
   {
-    name: "echocardiogram_video.mp4",
+    name: "echocardiogram.mp4",
     body: "Recorded echocardiogram session. Video may include identifiable info; encrypt and log access.",
   },
   {
@@ -62,7 +62,7 @@ const features = [
     Icon: FileTextIcon,
     name: "Helathcare",
     description: "We automatically save your files as you type.",
-    href: "healthcare",
+    href: "/solution/healthcare",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -74,7 +74,7 @@ const features = [
           <figure
             key={idx}
             className={cn(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "relative w-44 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
@@ -82,7 +82,7 @@ const features = [
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-medium dark:text-white ">
+                <figcaption className="text-sm  font-medium dark:text-white ">
                   {f.name}
                 </figcaption>
               </div>
@@ -97,7 +97,7 @@ const features = [
     Icon: BellIcon,
     name: "Fintech",
     description: "Get notified when something happens.",
-    href: "/fintech",
+    href: "/solution/fintech",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
@@ -108,7 +108,7 @@ const features = [
     Icon: Share2Icon,
     name: "Manufacturing",
     description: "Secure the IoT, and the sensitive information of machines",
-    href: "/manufacturing",
+    href: "/solution/manufacturing",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
@@ -120,7 +120,7 @@ const features = [
     name: "PCI-DSS",
     description: "Secure your card details.",
     className: "col-span-3 lg:col-span-1",
-    href: "/pci",
+    href: "/solution/pci",
     cta: "Learn more",
     background: (
       <Credit/>
@@ -131,7 +131,7 @@ const features = [
     name: "Gen AI Privacy",
     description: "Mask the sensitive data before sending it to LLM's",
     className: "col-span-3 lg:col-span-1",
-    href: "/gen-ai",
+    href: "/solution/gen-ai",
     cta: "Learn More",
     background: (
       <PIITextCardDemo/>
@@ -142,7 +142,7 @@ const features = [
     name: "PHI",
     description: "Get complied by PHI, HIPPA",
     className: "col-span-3 lg:col-span-1",
-    href: "/phi",
+    href: "/solution/phi",
     cta:"Learn More",
     background: (
       <PhiCards/>
@@ -153,7 +153,7 @@ const features = [
     name: "PII",
     description: "Encrypt the PII data",
     className: "col-span-3 lg:col-span-1",
-    href: "/pii",
+    href: "/solution/pii",
     cta: "Learn More",
     background: (
       <PIITextReveal/>
@@ -164,7 +164,9 @@ const features = [
 export function BentoDemo() {
   return (
 <React.Fragment>
-    <BentoGrid className="p-4 lg:p-8">
+
+    <BentoGrid className="p-10 lg:p-20 gap-8">
+
       {features.map((feature, idx) => (
         
         <BentoCard key={idx} {...feature} />

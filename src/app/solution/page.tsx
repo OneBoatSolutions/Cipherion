@@ -83,27 +83,23 @@ function page() {
                         />
                       </span>
                     </motion.h2>
-        
                     <motion.p
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1, delay: 0.4 }}
-                      className="text-xl text-[#e0dbfb]/80 max-w-4xl mx-auto leading-relaxed"
+                      transition={{ duration: 1, delay: 0.6 }}
+                      className="text-base md:text-lg text-[#cbbafc]/70 text-justify mt-4 leading-relaxed"
                     >
-                      Quantum Resilient <br className="hidden md:block" />
-                      Encryption
+                    Cipherion is developing advanced data protection technology for modern digital ecosystems. It enables secure communication and storage without relying on traditional key systems. The platform works across industries to ensure privacy, compliance, and resilience against cyber threats. It integrates easily with existing software and infrastructure, offering developers simple tools for strong security. Cipherion's mission is to make enterprise-grade encryption accessible, seamless, and future-ready.
                     </motion.p>
                   </motion.div>
                  
                 </div>
               </section>
             </div>
-       
         <ReactFlowCanvas/>
         <BentoDemo/>
        <CtA1/>
     </div>
   )
 }
-
 export default page

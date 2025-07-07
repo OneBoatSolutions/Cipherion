@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link"; // redirect to contact-us in ABOUT US page
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -833,12 +834,14 @@ export default function GenAIPrivacy() {
                   <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                 </Button>
               </GradientBorder>
+              <Link href="/about#contact-section" className="w-full md:w-auto">
               <Button
                 variant="outline"
                 className="bg-transparent border-[#43256e]/50 text-[#d9b6ff] hover:bg-[#18062a]/50 px-8 py-4"
               >
                 Request Privacy Toolkit
               </Button>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -851,7 +854,7 @@ export default function GenAIPrivacy() {
             className="mb-20"
           >
             <h2 className="text-4xl font-bold text-white mb-6 text-center">
-              Why GenAI Raises New Privacy Risks
+              Why GenAI Raises New Privacy Risks?
             </h2>
             <p className="text-lg text-[#e0dbfb]/80 text-center mb-12 max-w-4xl mx-auto">
               Generative AI (GenAI) systems such as LLMs, image models, and
@@ -1031,6 +1034,7 @@ export default function GenAIPrivacy() {
             </h2>
             <GenAIFlowDiagram />
           </motion.div>
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1086,12 +1090,14 @@ export default function GenAIPrivacy() {
                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                   </Button>
                 </GradientBorder>
+                <Link href="/about#contact-section" className="w-full md:w-auto">
                 <Button
                   variant="outline"
                   className="bg-transparent border-[#43256e]/50 text-[#d9b6ff] hover:bg-[#18062a]/50 px-8 py-4"
                 >
                   Talk to AI Security Engineer
                 </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -1163,12 +1169,14 @@ export default function GenAIPrivacy() {
                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                   </Button>
                 </GradientBorder>
+                <Link href="/about#contact-section" className="w-full md:w-auto">
                 <Button
                   variant="outline"
                   className="bg-transparent border-[#43256e]/50 text-[#d9b6ff] hover:bg-[#18062a]/50 px-8 py-4"
                 >
                   Schedule Live Demo
                 </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
@@ -1193,7 +1201,7 @@ export default function GenAIPrivacy() {
               />
 
               <h3 className="text-3xl font-bold text-white mb-6">
-                What Is Data Masking and Why It's Needed
+                What Is Data Masking and Why It's Needed?
               </h3>
               <p className="text-lg text-[#e0dbfb]/80 leading-relaxed mb-8">
                 Data masking refers to the obfuscation of real data — partially
@@ -1259,7 +1267,7 @@ export default function GenAIPrivacy() {
                     </div>
                     <div>
                       <h5 className="text-sm font-medium text-[#9569fe] mb-2">
-                        What Needs Masking
+                        What Needs Masking?
                       </h5>
                       <p className="text-sm text-[#e0dbfb]/80">
                         {item.needsMasking}
@@ -1288,7 +1296,7 @@ export default function GenAIPrivacy() {
             className="mb-20"
           >
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              How Cipherion Applies Data Masking
+              How Cipherion Applies Data Masking?
             </h3>
             <div className="grid gap-8 md:grid-cols-2">
               {maskingCapabilities.map((capability, index) => (
@@ -1354,7 +1362,7 @@ export default function GenAIPrivacy() {
             
 
               <h3 className="text-4xl font-bold text-white mb-6 text-center">
-                Why Cipherion for Data Masking
+                Why Cipherion for Data Masking?
               </h3>
               <h4 className="text-2xl font-semibold text-[#d9b6ff] mb-6 text-center">
                 Smart Masking Without Breaking Functionality
@@ -1395,12 +1403,14 @@ export default function GenAIPrivacy() {
                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                   </Button>
                 </GradientBorder>
+                <Link href="/about#contact-section" className="w-full md:w-auto">
                 <Button
                   variant="outline"
                   className="bg-transparent border-[#43256e]/50 text-[#d9b6ff] hover:bg-[#18062a]/50 px-8 py-4"
                 >
                   Talk to Integration Specialist
                 </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

@@ -6,7 +6,8 @@ import { Button } from './ui/button'
 import { AuroraText } from './animated/aurora-text'
 function CtA1() {
   return (
-    <div className="w-full flex flex-col px-4 justify-center items-center gap-10">
+    <div className="w-full flex flex-col px-4 justify-center items-center gap-10 mt-20">
+      
       <CardSpotlight className="max-w-max h-[350px] z[-1]">
         <GlowingEffect
           spread={40}
@@ -31,13 +32,17 @@ function CtA1() {
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-6 justify-center relative z-20 w-full px-4">
-          <Link href="/demo" className="w-full md:w-auto">
-            <Button variant="default" className="w-full md:w-auto">Get a Demo</Button>
-          </Link>
-          <Link href="/solutions" className="w-full md:w-auto">
-            <Button variant="outline" className="w-full md:w-auto">Explore Solutions</Button>
-          </Link>
-        </div>
+        <Link href="/about#contact-section" className="w-full md:w-auto">
+          <Button variant="default" className="w-full md:w-auto">
+            Get a Demo
+          </Button>
+        </Link>
+        <Link href="/about#contact-section" className="w-full md:w-auto">
+          <Button variant="outline" className="w-full md:w-auto">
+            Explore Solutions
+          </Button>
+        </Link>
+      </div>
       </CardSpotlight>
     </div>
   );

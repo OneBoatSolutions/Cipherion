@@ -1,4 +1,7 @@
 "use client";
+import Link from "next/link"; // redirect to contact-us in ABOUT US page
+
+import WhySection from "@/components/WhySection";
 
 import React, { forwardRef, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
@@ -491,11 +494,13 @@ export default function Solutions() {
               className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
             >
               <GradientBorder>
+                <Link href="/about#contact-section" className="w-full md:w-auto">
                 <Button className="relative inline-flex rounded-md  items-center px-8 py-4  font-semibold  overflow-hidden group">
                   <div className="absolute inset-0" />
                   <span className="relative z-10">Request a Demo</span>
                   <ArrowRight className="w-5 h-5 relative z-10" />
                 </Button>
+                </Link>
               </GradientBorder>
             </motion.div>
           </motion.div>
@@ -520,7 +525,7 @@ export default function Solutions() {
               />
 
               <h3 className="text-3xl font-bold text-white mb-6">
-                What Is PII and Why It Needs Protection
+                What Is PII and Why It Needs Protection?
               </h3>
               <p className="text-lg text-[#e0dbfb]/80 leading-relaxed">
                 Personally Identifiable Information (PII) includes any data that
@@ -542,7 +547,7 @@ export default function Solutions() {
             className="mb-20"
           >
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              PII Compliance Matrix – How Cipherion Helps
+              PII Compliance Matrix – How Cipherion Helps?
             </h3>
             <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
               {piiComplianceMatrix.map((item, index) => (
@@ -604,7 +609,7 @@ export default function Solutions() {
             className="mb-20"
           >
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              How Cipherion Secures PII
+              How Cipherion Secures PII?
             </h3>
             <div className="grid gap-8 md:grid-cols-2">
               {piiBenefits.map((benefit, index) => (
@@ -657,8 +662,22 @@ export default function Solutions() {
             </h3>
             <PIIFlowDiagram />
           </motion.div>
+          
+          {/* Why Cipherion for PII Compliance*/}
+          <WhySection
+          title="Why Cipherion for PII Compliance?"
+          subtitle="Protect People Without Rebuilding Systems"
+          description="Cipherion keeps your PII protected at every stage — without sending it to any third-party vault or compromising application speed."
+          benefits={[
+            "Secure PII inside your own DB (no external vaults)",
+            "Format-preserving tokenization for safe processing",
+            "Real-time breach protection with deterministic hashing",
+            "APIs for access, download, deletion, and anonymization",
+            "Ready for GDPR, CCPA, India DPDP, and more",
+          ]}
+        />
 
-          {/* Why Cipherion for PII Compliance */}
+          {/* Why Cipherion for PII Compliance
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -707,7 +726,7 @@ export default function Solutions() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Final CTAs for PII */}
           <motion.div

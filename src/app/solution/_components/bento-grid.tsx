@@ -60,7 +60,7 @@ const BentoCard = ({
      
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-2 p-6 transition-transform duration-300 group-hover:-translate-y-10">
      
-      <Icon className="h-12 w-12 text-neutral-700 dark:text-neutral-300 transition-transform duration-300 ease-in-out group-hover:scale-75" />
+      <Icon className="h-8 w-8 text-neutral-700 dark:text-neutral-300 transition-transform duration-300 ease-in-out group-hover:scale-75" />
       <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
         {name}
       </h3>
@@ -68,7 +68,8 @@ const BentoCard = ({
     </div>
 
     <div className="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto">
+      {/* Modified color of learn button */}
+      <Button variant="default" asChild size="sm" className="pointer-events-auto">
         <a href={href}>
           {cta}
           <ArrowRightIcon className="ml-2 h-4 w-4 rtl:rotate-180" />
