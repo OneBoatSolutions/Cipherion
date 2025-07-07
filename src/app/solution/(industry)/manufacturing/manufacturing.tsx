@@ -1,4 +1,7 @@
 "use client";
+import Link from "next/link"; // redirect to contact-us in ABOUT US page
+
+import WhySection from "@/components/WhySection";
 
 import React, { forwardRef, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
@@ -357,10 +360,12 @@ export default function ManufacturingSolutions() {
                             className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
                         >
                             <GradientBorder>
+                                <Link href="/about#contact-section" className="w-full md:w-auto">
                                 <Button className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
                                     <span className="relative z-10">Request Manufacturing Use Case Demo</span>
                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                                 </Button>
+                                </Link>
                             </GradientBorder>
                              
                              
@@ -388,7 +393,7 @@ export default function ManufacturingSolutions() {
                             />
 
                             <h3 className="text-3xl font-bold text-white mb-6">
-                                Why Manufacturing Needs Cipherion
+                                Why Manufacturing Needs Cipherion?
                             </h3>
                             <p className="text-lg text-[#e0dbfb]/80 leading-relaxed">
                                 Modern factories, OEMs, and industrial suppliers generate and manage a vast amount of sensitive data. Cipherion protects all of this — without requiring infrastructure overhaul.
@@ -405,7 +410,7 @@ export default function ManufacturingSolutions() {
                         className="mb-20"
                     >
                         <h3 className="text-4xl font-bold text-white mb-12 text-center">
-                            What Cipherion Secures in a Manufacturing Setup
+                            What Cipherion Secures in a Manufacturing Setup?
                         </h3>
                         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
                             {dataSecurityMatrix.map((item, index) => (
@@ -467,7 +472,7 @@ export default function ManufacturingSolutions() {
                         className="mb-20"
                     >
                         <h3 className="text-4xl font-bold text-white mb-12 text-center">
-                            How Cipherion Works in Manufacturing Environments
+                            How Cipherion Works in Manufacturing Environments?
                         </h3>
                         <div className="grid gap-8 md:grid-cols-2">
                             {keyBenefits.map((benefit, index) => (
@@ -522,68 +527,20 @@ export default function ManufacturingSolutions() {
                     </motion.div>
 
                     {/* Why Cipherion for Manufacturing */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="mb-20"
-                    >
-                        <div className="relative rounded-3xl border border-[#43256e]/30 p-8 bg-[#18062a]/20 backdrop-blur-sm">
-                            <GlowingEffect
-                                spread={40}
-                                glow={true}
-                                disabled={false}
-                                proximity={64}
-                                inactiveZone={0.01}
-                                movementDuration={1.5}
-                                borderWidth={1}
-                            />
+                    <WhySection
+                    title="Why Cipherion for Manufacturing?"
+                    benefits={[
+                        "Zero Change to PLC, MES, or Database Structure",
+                        "Works with legacy systems — no re-architecture required",
+                        "Keeps your IP and production secrets secure",
+                        "Protects your supply chain pricing & compliance data",
+                        "Helps meet ISO 27001, GDPR, DPDP, and internal infosec standards",
+                        "Enhances security without slowing operations",
+                        ]}
+                        
+                    />
 
-                            <h3 className="text-4xl font-bold text-white mb-6">
-                                Why Cipherion for Manufacturing?
-                            </h3>
-                            <div className="grid md:grid-cols-2 gap-4">
-                                {[
-                                    "Zero Change to PLC, MES, or Database Structure",
-                                    "Works with legacy systems — no re-architecture required",
-                                    "Keeps your IP and production secrets secure",
-                                    "Protects your supply chain pricing & compliance data",
-                                    "Helps meet ISO 27001, GDPR, DPDP, and internal infosec standards",
-                                    "Enhances security without slowing operations",
-                                ].map((item, index) => (
-                                    <div key={index} className="flex items-center gap-3">
-                                        <CheckCircle className="h-5 w-5 text-[#9569fe] flex-shrink-0" />
-                                        <span className="text-[#e0dbfb]/80">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Final CTAs */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="text-center"
-                    >
-                         <h3 className="text-4xl font-bold text-white mb-12 text-center">
-                            Ready to Secure Your Factory Data?
-                        </h3>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                             <GradientBorder>
-                                <Button className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
-                                    <span className="relative z-10">Request a Manufacturing Case Study</span>
-                                    <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
-                                </Button>
-                            </GradientBorder>
-
-                             
-
-                        </div>
-                    </motion.div>
+                    
                 </div>
                 <div className="flex w-full justify-center mt-20">
                     <CtA1/>

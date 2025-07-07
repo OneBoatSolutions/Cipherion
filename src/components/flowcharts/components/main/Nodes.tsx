@@ -22,7 +22,7 @@ export const CipherionNode: React.FC<NodeProps<CipherionNodeData>> = ({ xPos, yP
       />
       
       <CipherionCard />
-       <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+       {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
       <Handle
         id="cipherion-right"
         type="source"
@@ -58,7 +58,7 @@ export const ClientDatabaseNode: React.FC<NodeProps<ClientDatabaseNodeData>> = (
       />
       
       <ClientDatabaseCard />
-      <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+      {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
     </div>
   );
 };
@@ -89,7 +89,7 @@ export const DeIdentifiedDataNode: React.FC<NodeProps<DeIdentifiedDataNodeData>>
         position={Position.Right}
         className="w-3 h-3 !bg-orange-500 !border-2 !border-white shadow-md"
       />
-       <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+       {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
     </div>
   );
 };
@@ -109,7 +109,7 @@ export const EncryptedDataNode: React.FC<NodeProps<EncryptedDataNodeData>> = ({ 
       />
       
       <EncryptedDataCard />
-       <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+       {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
       
       {/* Output handle */}
       <Handle
@@ -131,7 +131,7 @@ export const NonSensitiveDataNode: React.FC<NodeProps<NonSensitiveDataNodeData>>
       <NonSensitiveDataCard />
       
       {/* Output handle */}
-       <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+       {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
       <Handle
         type="source"
         position={Position.Right}
@@ -163,7 +163,7 @@ export const SensitiveDataNode: React.FC<NodeProps<SensitiveDataNodeData>> = ({ 
       
       {/* Main card component */}
       <SensitiveDataCard />
-       <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+       {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
       
       {/* Output handles */}
       <Handle
@@ -196,8 +196,9 @@ export const ThirdPartyLLMNode: React.FC<NodeProps<ThirdPartyLLMNodeData>> = ({ 
         position={Position.Left}
         className="w-3 h-3 !bg-purple-500 !border-2 !border-white shadow-md"
       />
-       <span>{Math.round(xPos)} , {Math.round(yPos)}</span>
+       {/* <span>{Math.round(xPos)} , {Math.round(yPos)}</span> */}
       <ThirdPartyLLMCard />
     </div>
   );
 };
+

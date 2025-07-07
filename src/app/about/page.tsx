@@ -8,6 +8,7 @@ import { AuroraText } from "@/components/animated/aurora-text";
 import CipherionTimeline from "@/components/CipherionStory";
 import { CtA1, CtA2 } from "@/components/cta";
 
+import ContactUs from "@/components/ContactUs"; // adjust path as per your folder
 
 const corePrinciples = [
   {
@@ -111,7 +112,8 @@ const Page = () => {
       </div>
       <CipherionTimeline/>
       <div className="mt-20">
-
+          {/* Embeded ContactUs section here */}
+      <ContactUs />
       </div>
       <CtA1/>
     </section>

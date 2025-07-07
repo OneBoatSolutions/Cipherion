@@ -1,5 +1,6 @@
 "use client";
 
+import WhySection from "@/components/WhySection";
 import React, { forwardRef, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import {
@@ -21,7 +22,6 @@ import {
   History,
   GanttChart,
 } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { GlowingEffect } from "@/components/animated/glowing-card";
 import { Button } from "@/components/ui/button";
@@ -277,7 +277,6 @@ export default function FintechSolutions() {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
@@ -393,7 +392,7 @@ export default function FintechSolutions() {
               />
 
               <h3 className="text-3xl font-bold text-white mb-6">
-                Why Fintech Needs Cipherion
+                Why Fintech Needs Cipherion?
               </h3>
               <p className="text-lg text-[#e0dbfb]/80 leading-relaxed">
                 Fintech apps, payment processors, and banks handle massive
@@ -473,7 +472,7 @@ export default function FintechSolutions() {
             className="mb-20"
           >
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              How Cipherion Works in Fintech Environments
+              How Cipherion Works in Fintech Environments?
             </h3>
             <div className="grid gap-8 md:grid-cols-2">
               {keyBenefits.map((benefit, index) => (
@@ -528,44 +527,17 @@ export default function FintechSolutions() {
           </motion.div>
 
           {/* Why Cipherion for Fintech */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="relative rounded-3xl border border-[#43256e]/30 p-8 bg-[#18062a]/20 backdrop-blur-sm">
-              <GlowingEffect
-                spread={40}
-                glow={true}
-                disabled={false}
-                proximity={64}
-                inactiveZone={0.01}
-                movementDuration={1.5}
-                borderWidth={1}
-              />
-
-              <h3 className="text-4xl font-bold text-white mb-6">
-                Why Cipherion for Fintech?
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Protects PII, cardholder data, and transactions inline",
-                  "PCI-DSS Section 3.4, 3.5, 10 compliance enabled out-of-the-box",
-                  "DPDP & GDPR ready with inline consent tagging & masking",
-                  "Zero-vault architecture — your data stays with you",
-                  "Minimal latency, compatible with real-time fintech workloads",
-                  "Integrates with payment APIs, lending engines, BI tools, and CRM",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-[#9569fe] flex-shrink-0" />
-                    <span className="text-[#e0dbfb]/80">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          <WhySection
+            title="Why Cipherion for Fintech?"
+            benefits={[
+              "Protects PII, cardholder data, and transactions inline",
+              "PCI-DSS Section 3.4, 3.5, 10 compliance enabled out-of-the-box",
+              "DPDP & GDPR ready with inline consent tagging & masking",
+              "Zero-vault architecture — your data stays with you",
+              "Minimal latency, compatible with real-time fintech workloads",
+              "Integrates with payment APIs, lending engines, BI tools, and CRM",
+            ]}
+          />
 
           {/* Final CTAs */}
           <motion.div
