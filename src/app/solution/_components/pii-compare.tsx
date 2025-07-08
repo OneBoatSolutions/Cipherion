@@ -58,7 +58,7 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
           .split('\n')
           .map((line, idx) => idx === 0 ? `"pii_data": ${line}` : `  ${line}`)
           .join('\n');
-        
+
         const revealText = JSON.stringify(encryptedData, null, 2)
           .split('\n')
           .map((line, idx) => idx === 0 ? `"encrypted_data": ${line}` : `  ${line}`)
@@ -112,7 +112,7 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
       }
     };
 
-    
+
     const rotateDeg = (widthPercentage - 60) * 0.1;
 
     return (
@@ -130,7 +130,7 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
         )}
         {...props}
       >
-       
+
         {/* JSON Content Area */}
         <div className="relative w-full h-full bg-transparent flex items-center overflow-hidden">
           {/* Reveal layer (encrypted data) */}
@@ -139,12 +139,12 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
             animate={
               isMouseOver
                 ? {
-                    opacity: widthPercentage > 0 ? 1 : 0,
-                    clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
-                  }
+                  opacity: widthPercentage > 0 ? 1 : 0,
+                  clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
+                }
                 : {
-                    clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
-                  }
+                  clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
+                }
             }
             transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
             className="absolute bg-transparent z-20 will-change-transform"
@@ -170,7 +170,7 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
             {/* Gradient effects */}
             <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-indigo-400 via-transparent to-transparent z-20 opacity-50" />
             <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-cyan-400 via-transparent to-transparent z-10 opacity-100" />
-            
+
             {/* Sparkles around the divider */}
             <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
               <MemoizedSparklesCore
@@ -186,9 +186,15 @@ const PIITextCard = React.forwardRef<HTMLDivElement, PIIJsonCardProps>(
 
           {/* Base layer (PII data) */}
           <div className="overflow-hidden w-full [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] h-full flex items-center">
-            <pre className="text-sm font-mono p-8 text-gray-500 whitespace-pre-wrap leading-relaxed">
+            <pre
+              className={cn(
+                "text-sm font-mono p-8 whitespace-pre-wrap leading-relaxed",
+                isMouseOver ? "text-transparent" : "text-gray-500"
+              )}
+            >
               {`{\n  ${plainJson}\n}`}
             </pre>
+
           </div>
         </div>
       </div>

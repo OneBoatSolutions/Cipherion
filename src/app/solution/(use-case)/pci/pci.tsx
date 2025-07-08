@@ -1,4 +1,7 @@
 "use client";
+import Link from "next/link"; // redirect to contact-us in ABOUT US page
+
+import WhySection from "@/components/WhySection";
 
 import React, { forwardRef, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
@@ -413,6 +416,7 @@ export default function PCISolutions() {
               className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
             >
               <GradientBorder>
+                <Link href="/about#contact-section" className="w-full md:w-auto">
                 <Button className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
                   <div className="absolute inset-0" />
                   <span className="relative z-10">
@@ -420,6 +424,7 @@ export default function PCISolutions() {
                   </span>
                   <ArrowRight className="w-5 h-5 relative z-10 ml-2" />
                 </Button>
+                </Link>
               </GradientBorder>
             </motion.div>
           </motion.div>
@@ -559,7 +564,7 @@ export default function PCISolutions() {
             className="mb-20"
           >
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              How Cipherion Enables PCI-DSS Compliance
+              How Cipherion Enables PCI-DSS Compliance?
             </h3>
             <div className="grid gap-8 md:grid-cols-2">
               {keyBenefitsPCI.map((benefit, index) => (
@@ -612,7 +617,21 @@ export default function PCISolutions() {
             <PaymentDataFlowDiagram />
           </motion.div>
 
-          {/* Why Cipherion for PCI-DSS */}
+            <WhySection
+            title="Why Cipherion for PCI-DSS Environments?"
+            subtitle="Compliance Without Lock-In or Re-Architecture"
+            description="Cipherion fits into your existing payment stack, encrypts data at the source, and logs everything for PCI-DSS audits — without offloading your cardholder data to a third-party vault."
+            benefits={[
+              "PAN + CVV encryption at input layer",
+              "Format-preserving tokenization",
+              "Logging built for PCI-DSS Sections 10.2–10.6",
+              "Session-based key generation",
+              "Works with existing databases, APIs, gateways",
+              "No vendor lock-in or shared storage",
+            ]}
+          />
+
+          {/* Why Cipherion for PCI-DSS
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -662,7 +681,7 @@ export default function PCISolutions() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Final CTAs */}
           <motion.div

@@ -1,5 +1,6 @@
 "use client";
-
+import Link from "next/link"; // redirect to contact-us in ABOUT US page
+import WhySection from "@/components/WhySection"; //why Cipherion section format
 import React, { forwardRef, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import {
@@ -331,11 +332,11 @@ export default function HealthcareSolutions() {
                             transition={{ duration: 1, delay: 0.2 }}
                             className="text-5xl md:text-7xl font-bold text-muted-foreground mb-8 leading-tight"
                         >
-                            Secure ePHI. Enable Compliance.
+                            Secure <AuroraText>ePHI.</AuroraText> Enable Compliance.
                             <br />
                             <span className="relative">
                                 <span className="">
-                                    <AuroraText>Power Trust.</AuroraText>
+                                    Power Trust.
                                 </span>
                             </span>
                         </motion.h2>
@@ -357,10 +358,12 @@ export default function HealthcareSolutions() {
                             className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
                         >
                             <GradientBorder>
+                                <Link href="/about#contact-section" className="w-full md:w-auto">
                                 <Button className="relative inline-flex rounded-md items-center px-8 py-4 font-semibold overflow-hidden group">
                                     <span className="relative z-10">Request a Healthcare Demo</span>
                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                                 </Button>
+                                </Link>
                             </GradientBorder>
                              
                         </motion.div>
@@ -386,7 +389,7 @@ export default function HealthcareSolutions() {
                             />
 
                             <h3 className="text-3xl font-bold text-white mb-6">
-                                Why Healthcare Needs Cipherion
+                                Why Healthcare Needs Cipherion?
                             </h3>
                             <p className="text-lg text-[#e0dbfb]/80 leading-relaxed">
                                 Hospitals, diagnostics labs, healthtech platforms, and insurers handle extremely sensitive data. Cipherion protects this critical data while letting you stay fully in control of your infrastructure.
@@ -395,6 +398,7 @@ export default function HealthcareSolutions() {
                     </motion.div>
 
                     {/* What Cipherion Secures Matrix */}
+                    
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -403,7 +407,7 @@ export default function HealthcareSolutions() {
                         className="mb-20"
                     >
                         <h3 className="text-4xl font-bold text-white mb-12 text-center">
-                            What Cipherion Secures in Healthcare Systems
+                            What Cipherion Secures in Healthcare Systems?
                         </h3>
                         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
                             {healthcareDataMatrix.map((item, index) => (
@@ -465,7 +469,7 @@ export default function HealthcareSolutions() {
                         className="mb-20"
                     >
                         <h3 className="text-4xl font-bold text-white mb-12 text-center">
-                            How Cipherion Works in Healthcare Environments
+                            How Cipherion Works in Healthcare Environments?
                         </h3>
                         <div className="grid gap-8 md:grid-cols-2">
                             {keyBenefits.map((benefit, index) => (
@@ -518,47 +522,22 @@ export default function HealthcareSolutions() {
                         </h3>
                         <DataFlowDiagram />
                     </motion.div>
-
+                    
                     {/* Why Cipherion for Healthcare */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="mb-20"
-                    >
-                        <div className="relative rounded-3xl border border-[#43256e]/30 p-8 bg-[#18062a]/20 backdrop-blur-sm">
-                            <GlowingEffect
-                                spread={40}
-                                glow={true}
-                                disabled={false}
-                                proximity={64}
-                                inactiveZone={0.01}
-                                movementDuration={1.5}
-                                borderWidth={1}
-                            />
-
-                            <h3 className="text-4xl font-bold text-white mb-6">
-                                Why Cipherion for Healthcare?
-                            </h3>
-                            <div className="grid md:grid-cols-2 gap-4">
-                                {[
-                                    "HIPAA, DPDP, and GDPR Ready",
-                                    "Keeps data inside your infrastructure — no off-premise vaults",
-                                    "Encrypts ePHI, PII, and insurance records at the field level",
-                                    "Logs every PHI access for compliance audit readiness",
-                                    "Works with legacy EMRs, modern APIs, and cloud health stacks",
-                                    "Protects from insider misuse and external breaches alike",
-                                ].map((item, index) => (
-                                    <div key={index} className="flex items-center gap-3">
-                                        <CheckCircle className="h-5 w-5 text-[#9569fe] flex-shrink-0" />
-                                        <span className="text-[#e0dbfb]/80">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-
+                    <WhySection
+                        title="Why Cipherion for Healthcare?"
+                        subtitle="Smart Masking Without Breaking Functionality"
+                        description="Cipherion masks data with minimal performance impact and maximal control — enabling compliance, analytics, and testing simultaneously."
+                        benefits={[
+                            "HIPAA, DPDP, and GDPR Ready",
+                            "Keeps data inside your infrastructure — no off-premise vaults",
+                            "Encrypts ePHI, PII, and insurance records at the field level",
+                            "Logs every PHI access for compliance audit readiness",
+                            "Works with legacy EMRs, modern APIs, and cloud health stacks",
+                            "Protects from insider misuse and external breaches alike",
+                        ]}
+                    />
+                    
                     {/* Final CTAs */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -577,8 +556,6 @@ export default function HealthcareSolutions() {
                                     <ArrowRight className="w-5 h-5 ml-2 relative z-10" />
                                 </Button>
                             </GradientBorder>
-                           
-                             
                         </div>
                     </motion.div>
                 </div>

@@ -57,7 +57,7 @@ export default function Component() {
   }, [])
 
   return (
-    <div className="absolute right-0 top-10 origin-top scale-75 rounded-md  transition-all duration-300 ease-out  group-hover:scale-90 opacity-90">
+    <div className="absolute right-0 top-10 origin-top scale-70 rounded-md  transition-all duration-300 ease-out  group-hover:scale-75 opacity-90">
       <div className="relative w-96 h-60">
         {/* Card Container */}
         <div className="relative w-full h-full transition-all duration-500 hover:scale-105">

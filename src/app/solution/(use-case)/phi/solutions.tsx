@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link"; // redirect to contact-us in ABOUT US page
+import WhySection from "@/components/WhySection";
 
 import React, { forwardRef, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
@@ -476,12 +478,14 @@ export default function Solutions() {
               transition={{ duration: 1, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
             >
-                <GradientBorder>
-              <Button className="relative inline-flex rounded-md  items-center px-8 py-4  font-semibold  overflow-hidden group">
-                <div className="absolute inset-0" />
-                <span className="relative z-10">Request a Demo</span>
-                <ArrowRight className="w-5 h-5 relative z-10" />
-              </Button>
+              <GradientBorder>
+                <Link href="/about#contact-section" className="w-full md:w-auto">
+                <Button className="relative inline-flex rounded-md  items-center px-8 py-4  font-semibold  overflow-hidden group">
+                  <div className="absolute inset-0" />
+                  <span className="relative z-10">Request a Demo</span>
+                  <ArrowRight className="w-5 h-5 relative z-10" />
+                </Button>
+                </Link>
               </GradientBorder>
             </motion.div>
           </motion.div>
@@ -590,7 +594,7 @@ export default function Solutions() {
             className="mb-20"
           >
             <h3 className="text-4xl font-bold text-white mb-12 text-center">
-              How Cipherion Helps You Stay HIPAA-Compliant
+              How Cipherion Helps You Stay HIPAA-Compliant?
             </h3>
             <div className="grid gap-8 md:grid-cols-2">
               {keyBenefits.map((benefit, index) => (
@@ -645,6 +649,20 @@ export default function Solutions() {
           </motion.div>
 
           {/* Why Cipherion Is Different */}
+          <WhySection
+          title="Why Cipherion Is Different?"
+          subtitle="HIPAA Compliance Without Giving Up Control"
+          description="Cipherion empowers you to meet every HIPAA rule — while keeping full control of your data, infrastructure, and workflows. No vendor lock-in. No vault dependency."
+          benefits={[
+            "Keep PHI inside your own database (no external storage)",
+            "Use our encryption SDKs + logging middleware",
+            "Build secure APIs for patient access",
+            "Protect data from breaches using polymorphic + field-level encryption",
+            "Maintain HIPAA audit compliance without SaaS overhead",
+          ]}
+        />
+
+          {/* Why Cipherion Is Different
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -693,7 +711,7 @@ export default function Solutions() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Final CTAs */}
           <motion.div
